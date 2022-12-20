@@ -10,7 +10,7 @@ app.use(cors());
 // Funcion middleware para trabajar con objetos tipo JSON
 app.use(express.json());
 
-app.get('/', (req, res) => {server: 'NodeJS'});
+app.get('/', (req, res) => res.send({server: 'NodeJS'}));
 
 app.get('/api/employees', GetRequest);
 

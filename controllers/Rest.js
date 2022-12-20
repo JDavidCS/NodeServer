@@ -33,10 +33,13 @@ async function GetRequest(req, res){
             res.send(data.Employees.find(c => c.id === parseInt(req.params.id)));
         }
         else{
-            res.send('no se ha podido dar respuesta')
+            res.send('no se ha podido dar respuesta');
         }
+        console.log('GET Request successful...');
+
     }
     catch (err){
+        console.log('GET Request has failed...');
         console.log(err);
         res.send(err);
     }
@@ -63,9 +66,11 @@ async function PostRequest(req, res){
 
         const newJSON = await toWrite(data);
 
+        console.log('POST Request successful...');
         res.send(JSON.stringify(newJSON));
     }
     catch (err){
+        console.log('POST Request has failed...');
         console.log(err);
         res.send(err)
     }
@@ -81,15 +86,17 @@ async function PutRequest(req, res){
         employee.name = req.body.name || employee.name;
         employee.lastName = req.body.lastName || employee.lastName;
         employee.status = req.body.status || employee.status;
-        employee.Rdate = req.body.Rdate || employee.Rdate;
+        employee.Rdate = req.body.Rdate;
 
         data.Employees[data.Employees.indexOf(employee)] = employee;
 
         const newJSON = await toWrite(data);
 
+        console.log('PUT Request successful...');
         res.send(newJSON);
     }
     catch(err){
+        console.log('PUT Request has failed...');
         console.log(err);
         res.send(err)   
     }
@@ -108,9 +115,11 @@ async function DeleteRequest(req, res){
 
         const newJSON = await toWrite(data);
 
+        console.log('DELETE Request successful...');
         res.send(newJSON);
     }
     catch(err){
+        console.log('DELETE Request has failed...');
         console.log(err);
         res.send(err)
     }
