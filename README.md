@@ -4,7 +4,7 @@ This proyect have been created using [ExpressJS](https://expressjs.com/).
 
 ## About this Proyect
 
-This proyects is the backend of the [listaEmpleados](https://github.com/JDavidCS/listasEmpleados) proyect.
+This proyect is the backend of the [listaEmpleados](https://github.com/JDavidCS/listasEmpleados) proyect.
 
 ### Run Server
 ```
